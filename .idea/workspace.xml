@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="302b335a-a5f0-4b14-95c6-24f42462dd8a" name="Changes" comment="Hyperparameter tuning added, looks bleak">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="302b335a-a5f0-4b14-95c6-24f42462dd8a" name="Changes" comment="Hyperparameter tuning added, looks bleak" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +75,7 @@
       <workItem from="1742911767771" duration="6859000" />
       <workItem from="1743107569975" duration="244000" />
       <workItem from="1743108034124" duration="952000" />
-      <workItem from="1743109065129" duration="7124000" />
+      <workItem from="1743109065129" duration="7934000" />
     </task>
     <task id="LOCAL-00001" summary="base">
       <option name="closed" value="true" />
@@ -103,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743115455147</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Hyperparameter tuning added, looks bleak">
+      <option name="closed" value="true" />
+      <created>1743117296072</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743117296072</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
