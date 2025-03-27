@@ -1,0 +1,88 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null	(date 1743014436205)
++++ b/.gitignore	(date 1743014436205)
+@@ -0,0 +1,1 @@
++/music-genre-classification/KNN/spotify_songs.csv
+Index: music-genre-classification/KNN/KNN_Method_Classification.ipynb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n \"cells\": [\r\n  {\r\n   \"metadata\": {},\r\n   \"cell_type\": \"markdown\",\r\n   \"source\": \"going to make the KNN stuff in here\",\r\n   \"id\": \"29a4013f69079efe\"\r\n  },\r\n  {\r\n   \"metadata\": {\r\n    \"collapsed\": true\r\n   },\r\n   \"cell_type\": \"code\",\r\n   \"outputs\": [],\r\n   \"execution_count\": null,\r\n   \"source\": \"\",\r\n   \"id\": \"initial_id\"\r\n  }\r\n ],\r\n \"metadata\": {\r\n  \"kernelspec\": {\r\n   \"display_name\": \"Python 3\",\r\n   \"language\": \"python\",\r\n   \"name\": \"python3\"\r\n  },\r\n  \"language_info\": {\r\n   \"codemirror_mode\": {\r\n    \"name\": \"ipython\",\r\n    \"version\": 2\r\n   },\r\n   \"file_extension\": \".py\",\r\n   \"mimetype\": \"text/x-python\",\r\n   \"name\": \"python\",\r\n   \"nbconvert_exporter\": \"python\",\r\n   \"pygments_lexer\": \"ipython2\",\r\n   \"version\": \"2.7.6\"\r\n  }\r\n },\r\n \"nbformat\": 4,\r\n \"nbformat_minor\": 5\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/music-genre-classification/KNN/KNN_Method_Classification.ipynb b/music-genre-classification/KNN/KNN_Method_Classification.ipynb
+--- a/music-genre-classification/KNN/KNN_Method_Classification.ipynb	(revision 3598721d3e2ae0259c95fc1d21a0d42fd13d9bfe)
++++ b/music-genre-classification/KNN/KNN_Method_Classification.ipynb	(date 1743015229392)
+@@ -1,41 +1,24 @@
+-{
+- "cells": [
+-  {
+-   "metadata": {},
+-   "cell_type": "markdown",
+-   "source": "going to make the KNN stuff in here",
+-   "id": "29a4013f69079efe"
+-  },
+-  {
+-   "metadata": {
+-    "collapsed": true
+-   },
+-   "cell_type": "code",
+-   "outputs": [],
+-   "execution_count": null,
+-   "source": "",
+-   "id": "initial_id"
+-  }
+- ],
+- "metadata": {
+-  "kernelspec": {
+-   "display_name": "Python 3",
+-   "language": "python",
+-   "name": "python3"
+-  },
+-  "language_info": {
+-   "codemirror_mode": {
+-    "name": "ipython",
+-    "version": 2
+-   },
+-   "file_extension": ".py",
+-   "mimetype": "text/x-python",
+-   "name": "python",
+-   "nbconvert_exporter": "python",
+-   "pygments_lexer": "ipython2",
+-   "version": "2.7.6"
+-  }
+- },
+- "nbformat": 4,
+- "nbformat_minor": 5
+-}
++#%% md
++going to make the KNN stuff in here
++#%%
++import pandas as pd
++import numpy as np
++import re
++import unicodedata
++import itertools
++import pandas
++import seaborn as sns
++import matplotlib.pylab as pl
++import matplotlib as m
++import matplotlib as mpl
++import matplotlib.pyplot as plt
++import plotly.express as px
++from matplotlib import pyplot as plt
++from sklearn.neighbors import NearestNeighbors
++from sklearn.metrics.pairwise import cosine_similarity
++sns.set_theme(style='whitegrid')
++palette='viridis'
++
++
++df = pd.read_csv("/kaggle/input/30000-spotify-songs/spotify_songs.csv")
++df
+\ No newline at end of file
