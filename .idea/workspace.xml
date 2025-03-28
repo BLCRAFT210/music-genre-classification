@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="302b335a-a5f0-4b14-95c6-24f42462dd8a" name="Changes" comment="Hyperparameter tuning added, looks bleak" />
+    <list default="true" id="302b335a-a5f0-4b14-95c6-24f42462dd8a" name="Changes" comment="Hyperparameter tuning added, looks bleak">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-genre-classification/KNN/KNN_Method_Classification.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/music-genre-classification/KNN_Method_Classification.ipynb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +59,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\School\Fourth_Semester\ML\final_project\music-genre-classification" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -75,7 +83,7 @@
       <workItem from="1742911767771" duration="6859000" />
       <workItem from="1743107569975" duration="244000" />
       <workItem from="1743108034124" duration="952000" />
-      <workItem from="1743109065129" duration="7934000" />
+      <workItem from="1743109065129" duration="12515000" />
     </task>
     <task id="LOCAL-00001" summary="base">
       <option name="closed" value="true" />
@@ -109,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743117296072</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Hyperparameter tuning added, looks bleak">
+      <option name="closed" value="true" />
+      <created>1743117659429</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743117659429</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
