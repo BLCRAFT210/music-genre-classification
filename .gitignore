@@ -1,1 +1,2 @@
-/music-genre-classification/KNN/spotify_songs.csv
+./music-genre-classification/KNN/spotify_songs.csv
+./music-genre-classification/KNN/tracks.csv
