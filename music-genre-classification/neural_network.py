@@ -22,6 +22,8 @@ feature_cols = ['danceability', 'energy', 'loudness', 'speechiness',
                 'key_10', 'key_7', 'key_11', 'key_2', 'key_3', 'key_6',
                 'key_1', 'key_4', 'key_0', 'key_8', 'key_5', 'key_9',
                 'mode_0', 'mode_1']  # Added new features
+feature_cols += ["energy_dance","tempo_energy","acoustic_instrument","valence_energy","duration_min","loudness_per_min","log_duration","log_loudness","log_instrumentalness","energy_loudness_ratio","valence_minus_energy","dance_tempo_ratio","acoustic_instrument_ratio","speech_to_instrument_ratio","energy_squared","tempo_squared","valence_squared","danceability_squared","dance_energy_tempo","valence_energy_loudness","acoustic_speech_live"]
+
 label_cols = [col for col in df.columns if col.startswith('label_')]
 
 # Convert one-hot label columns to a single categorical label
@@ -132,7 +134,8 @@ with torch.no_grad():
 '''
 
 # Define a range of learning rates to test
-learning_rates = [0.0001, 0.0003, 0.0005, 0.0008, 0.001]
+#learning_rates = [0.0001, 0.0003, 0.0005, 0.0008, 0.001]
+learning_rates = [0.0003]
 results = {}
 accuracies = {}
 genre_accuracies = {}
