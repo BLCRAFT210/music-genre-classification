@@ -4,6 +4,7 @@ import torch.nn as nn
 import torch.optim as optim
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 
 # Check if CUDA is available
@@ -28,6 +29,7 @@ df['label'] = df[label_cols].idxmax(axis=1)
 
 # Encode labels as integers
 label_to_index = {label: idx for idx, label in enumerate(df['label'].unique())}
+label_mapping = {idx: label.split('_')[1] for label, idx in label_to_index.items()}  # Map index to genre
 df['label_index'] = df['label'].map(label_to_index)
 
 # Split data
@@ -72,6 +74,8 @@ input_dim = X_train.shape[1]
 hidden_dim = 128
 output_dim = len(label_to_index)
 
+'''
+
 # Move model to device
 model = SongGenreClassifier(input_dim, hidden_dim, output_dim).to(device)
 criterion = nn.CrossEntropyLoss()
@@ -108,8 +112,6 @@ for epoch in range(5):
         print(f"Early stopping triggered at epoch {epoch+1}")
         break
 
-from sklearn.metrics import accuracy_score
-
 # Set model to evaluation mode
 model.eval()
 
@@ -127,10 +129,13 @@ with torch.no_grad():
     accuracy = accuracy_score(y_true, y_pred)
     print(f"Test Accuracy: {accuracy * 100:.2f}%")
 
+'''
+
 # Define a range of learning rates to test
-learning_rates = [0.0001, 0.0003, 0.0005, 0.0006, 0.0007, 0.0008, 0.0009, 0.001, 0.0015, 0.002]
+learning_rates = [0.0001, 0.0003, 0.0005, 0.0008, 0.001]
 results = {}
 accuracies = {}
+genre_accuracies = {}
 
 for lr in learning_rates:
     print(f"\nTesting learning rate: {lr}")
@@ -166,22 +171,28 @@ for lr in learning_rates:
         _, predicted = torch.max(test_outputs, 1)
         y_pred = predicted.cpu().numpy()
         y_true = y_test_tensor.cpu().numpy()
+
+        # Compute overall accuracy
         accuracy = accuracy_score(y_true, y_pred)
         accuracies[lr] = accuracy
         print(f"Test Accuracy with learning rate {lr}: {accuracy * 100:.2f}%")
 
-# Plot the loss results
-plt.figure(figsize=(10, 6))
-for lr, losses in results.items():
-    plt.plot(range(1, 201), losses, label=f"LR: {lr}")
-plt.xlabel("Epoch")
-plt.ylabel("Loss")
-plt.title("Loss vs. Epoch for Different Learning Rates")
-plt.legend()
-plt.grid(True)
-plt.show()
+        # Compute genre accuracy
+        # Extract genres from labels (assumes labels are in the format 'label_genre_subgenre')
+
+        y_pred_genres = [label_mapping[label] for label in y_pred]
+        y_true_genres = [label_mapping[label] for label in y_true]
+
+        # Compute genre accuracy
+        genre_accuracy = accuracy_score(y_true_genres, y_pred_genres)
+        print(f"Genre Accuracy with learning rate {lr}: {genre_accuracy * 100:.2f}%")
+        genre_accuracies[lr] = genre_accuracy
 
 # Print final test accuracies for each learning rate
 print("\nFinal Test Accuracies:")
 for lr, accuracy in accuracies.items():
     print(f"Learning Rate: {lr}, Test Accuracy: {accuracy * 100:.2f}%")
+
+print("\nFinal Genre Accuracies:")
+for lr, genre_accuracy in genre_accuracies.items():
+    print(f"Learning Rate: {lr}, Genre Accuracy: {genre_accuracy * 100:.2f}%")
